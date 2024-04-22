@@ -7,7 +7,7 @@ from flask import Flask, render_template, jsonify
 from flask import (
     Response as FlaskResponse,
 )
-import pandas as pd
+import pandas
 
 from typing import List, Dict, Any
 from typing_extensions import Hashable
@@ -16,7 +16,7 @@ CSVType = List[Dict[Hashable, Any]]
 
 app = Flask(__name__, template_folder="template", static_folder="frontend")
 
-data: CSVType = pd.read_csv(RESOURCE_FILE).to_dict(orient="records")
+data: CSVType = pandas.read_csv(RESOURCE_FILE).to_dict(orient="records")
 logger_specials.values_returned(data, init=__name__)
 
 

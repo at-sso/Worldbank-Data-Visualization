@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Function to populate table data
+  var loadingMessage = document.getElementById("loading-message");
+  var table = document.getElementById("vaccination-table");
+
   function populateTable(data) {
     var tableBody = document.getElementById("table-body");
 
-    // Clear existing table rows
     tableBody.innerHTML = "";
 
-    // Loop through data and create table rows
     data.forEach(function (row) {
       var tr = document.createElement("tr");
 
@@ -18,10 +18,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       tableBody.appendChild(tr);
     });
+
+    table.style.display = "table";
+    loadingMessage.style.display = "none";
   }
 
-  // Fetch data from server and populate table
   fetch("/data")
     .then((response) => response.json())
-    .then((data) => populateTable(data));
+    .then((data) => populateTable(data))
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+      loadingMessage.textContent = "Failed to load data.";
+    });
 });

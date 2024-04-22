@@ -13,7 +13,8 @@
         Panama
       </h1>
       <p>Below is the vaccination information for Panama:</p>
-      <table>
+      <div id="loading-message" style="display: none">Loading data...</div>
+      <table id="vaccination-table" style="display: none">
         <thead>
           <tr>
             <th>Country</th>
@@ -21,9 +22,10 @@
             <th>Indicator Name</th>
           </tr>
         </thead>
-        <tbody id="table-body"></tbody>
+        <tbody id="table-body">
+          <script src="/frontend/table.js"></script>
+        </tbody>
       </table>
     </div>
-    <script src="/frontend/table.js"></script>
   </body>
 </html>
