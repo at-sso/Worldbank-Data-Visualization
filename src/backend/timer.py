@@ -13,7 +13,7 @@ import time
 import traceback
 from typing import Any, Callable
 
-from src.logger import *
+from src.backend.logger import *
 
 # The code snippet `__s: Callable[[], float] = lambda: time.time()` and
 # `__e: Callable[[], float] = lambda: time.time()` is defining placeholder

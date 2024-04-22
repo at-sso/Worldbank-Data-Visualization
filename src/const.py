@@ -3,6 +3,7 @@ __all__ = [
     "LOGGER_PATH",
     "LOGGER_FILE",
     "SHARED_FILE",
+    "RESOURCE_FILE",
 ]
 
 import os as os
@@ -35,8 +36,9 @@ def __mkdirs(*paths: str) -> List[Any]:
 ABSOLUTE_PATH: str = os.path.abspath(os.path.dirname(sys.argv[0])).replace("\\", "/")
 LOGGER_PATH: str = f"{ABSOLUTE_PATH}/log"
 LOGGER_FILE: str = f"{LOGGER_PATH}/{dt.now().strftime('%Y-%m-%d-%H-%M-%S')}.log"
-SHARED_FILE: str = f"{ABSOLUTE_PATH}/src/bin/random64" + (
+SHARED_FILE: str = f"{ABSOLUTE_PATH}/src/backend/bin/random64" + (
     ".dll" if os.name == "nt" else ".so"
 )
+RESOURCE_FILE: str = f"{ABSOLUTE_PATH}/src/frontend/resource.csv"
 
 __mkdirs(LOGGER_PATH)

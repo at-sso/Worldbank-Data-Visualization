@@ -64,6 +64,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.maxTokenizationLineLength": 2500
   },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.insertMode": "replace"
+  },
   "files.associations": {
     "*.json5": "jsonc",
     "*.ini": "ini",

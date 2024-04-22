@@ -8,7 +8,7 @@ import os
 from typing import Any, Union
 from typing_extensions import LiteralString
 
-from src.logger import *
+from src.backend.logger import *
 
 AnyOrStr = Union[Any, str]
 
